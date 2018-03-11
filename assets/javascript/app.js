@@ -24,11 +24,11 @@ function displayGifs() {
       // Looping over every result item
       for (var i = 0; i < results.length; i++) {
         // Only taking action if the photo has an appropriate rating
-        if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+        if (results[i].rating !== "r") {
 
 
           // Creating an image tag
-          var gifImage = $("<img class='m-3 col-md-3'>");
+          var gifImage = $("<img class='gif-images m-2'>");
 
           // Giving the image tag an src attribute of a proprty pulled off the
           // result item
@@ -45,11 +45,8 @@ function displayGifs() {
     });
 };
 
-
-
-// Function for displaying movie data
 function renderButtons() {
-  // Deleting the movie buttons prior to adding new movie buttons
+
   // (this is necessary otherwise we will have repeat buttons)
   $("#gif-buttons").empty();
 
@@ -75,12 +72,9 @@ $("#add-gif").on("click", function(event) {
   // We're using a form so that the user can hit enter instead of clicking the button if they want
   event.preventDefault();
 
-
   if ($("#gif-input").val() !== '') {
   // This line will grab the text from the input box
-  var gif = $("#gif-input")
-    .val()
-    .trim();
+  var gif = $("#gif-input").val().trim();
   $("#gif-input").val("");
   // The movie from the textbox is then added to our array
   gifs.push(gif);
