@@ -75,6 +75,8 @@ $("#add-gif").on("click", function(event) {
   // We're using a form so that the user can hit enter instead of clicking the button if they want
   event.preventDefault();
 
+
+  if ($("#gif-input").val() !== '') {
   // This line will grab the text from the input box
   var gif = $("#gif-input")
     .val()
@@ -85,6 +87,7 @@ $("#add-gif").on("click", function(event) {
 
   // calling renderButtons which handles the processing of our movie array
   renderButtons();
+  }
 });
 
 $(document).on("click", ".gif-button", displayGifs);
