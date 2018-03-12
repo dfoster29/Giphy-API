@@ -1,13 +1,23 @@
 body {
-  background-color: black;
+  background-image: url("../images/wood.jpg")
 }
 
 .container {
-  background-color: gray;
+  background-color: rgb(27, 26, 26);
+  padding-bottom: 20px;
+  margin-bottom: 75px;
+  border-radius: 10px;
 }
 
 .gif-images {
   border-radius: 5px;
   width: 30%;
   display: inline block;
+}
+
+.jumbotron {
+  font-size: 75px;
+  padding: 10px;
+  background-color: black;
+  color: white;
 }
