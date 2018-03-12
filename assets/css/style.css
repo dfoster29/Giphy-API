@@ -1,0 +1,13 @@
+body {
+  background-color: black;
+}
+
+.container {
+  background-color: gray;
+}
+
+.gif-images {
+  border-radius: 5px;
+  width: 30%;
+  display: inline block;
+}
