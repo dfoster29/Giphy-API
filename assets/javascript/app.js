@@ -11,7 +11,7 @@ function displayGifs() {
     giphy = $(this).attr("data-name")
   };
   // In this case, the "this" keyword refers to the button that was clicked
-  offset = Math.floor(Math.random() * 100);
+  offset = Math.floor(Math.random() * 200);
 
   // Constructing a URL to search Giphy for the name of the person who said the quote
   var queryURL =
@@ -88,6 +88,7 @@ $("#add-gif").on("click", function(event) {
 
     // calling renderButtons which handles the processing of our movie array
     renderButtons();
+    displayGifs();
   }
 });
 
