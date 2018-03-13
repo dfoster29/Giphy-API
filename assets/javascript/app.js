@@ -1,5 +1,7 @@
 var gifs = ["cat", "dog", "shark", "bird", "monkey"];
 
+var offset;
+
 function displayGifs() {
   // In this case, the "this" keyword refers to the button that was clicked
   var giphy = $(this).attr("data-name");
@@ -8,7 +10,9 @@ function displayGifs() {
   var queryURL =
     "https://api.giphy.com/v1/gifs/search?api_key=ChQcDZavsw8J53mE5HXu31YOwzqbpwvA&q=" +
     giphy +
-    "&limit=9&offset=0&rating=PG-13&lang=en";
+    "&limit=9&offset=" + offset + "&rating=PG-13&lang=en";
+
+    offset = Math.floor(Math.random() * 100);
 
   // Performing our AJAX GET request
   $.ajax({
@@ -37,7 +41,7 @@ function displayGifs() {
         }
       }
     });
-}
+};
 
 function renderButtons() {
   // (this is necessary otherwise we will have repeat buttons)
@@ -57,7 +61,7 @@ function renderButtons() {
     // Adding the button to the HTML
     $("#gif-buttons").append(a);
   }
-}
+};
 
 // This function handles events where one button is clicked
 $("#add-gif").on("click", function(event) {
