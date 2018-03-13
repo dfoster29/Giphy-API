@@ -1,4 +1,4 @@
-var gifs = ["cat", "dog", "shark", "bird", "monkey"];
+var gifs = ["monkey", "cat", "shark", "bird", "dog"];
 
 var offset;
 
@@ -59,7 +59,7 @@ function renderButtons() {
     // Providing the button's text with a value of the movie at index i
     a.text(gifs[i]);
     // Adding the button to the HTML
-    $("#gif-buttons").append(a);
+    $("#gif-buttons").prepend(a);
   }
 };
 
