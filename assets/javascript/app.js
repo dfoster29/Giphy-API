@@ -1,10 +1,17 @@
-var gifs = [];
+var gifs = ["puppy", "monkey", "shark"];
 
 var offset;
 
 function displayGifs() {
+  var giphy;
+  console.log($(this).attr("data-name"))
+  if (!$(this).attr("data-name")) {
+    giphy = "dog"
+  } else {
+    giphy = $(this).attr("data-name")
+  };
   // In this case, the "this" keyword refers to the button that was clicked
-  var giphy = $(this).attr("data-name");
+  offset = Math.floor(Math.random() * 100);
 
   // Constructing a URL to search Giphy for the name of the person who said the quote
   var queryURL =
@@ -12,8 +19,8 @@ function displayGifs() {
     giphy +
     "&limit=12&offset=" + offset + "&rating=PG-13&lang=en";
 
-    offset = Math.floor(Math.random() * 100);
-
+    
+console.log(queryURL);
   // Performing our AJAX GET request
   $.ajax({
     url: queryURL,
@@ -104,3 +111,4 @@ $(document).on("click", ".gif-images", function() {
   }
 });
 
+displayGifs();
