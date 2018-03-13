@@ -1,4 +1,4 @@
-var gifs = ["monkey", "cat", "shark", "bird", "dog"];
+var gifs = [];
 
 var offset;
 
@@ -10,7 +10,7 @@ function displayGifs() {
   var queryURL =
     "https://api.giphy.com/v1/gifs/search?api_key=ChQcDZavsw8J53mE5HXu31YOwzqbpwvA&q=" +
     giphy +
-    "&limit=8&offset=" + offset + "&rating=PG-13&lang=en";
+    "&limit=12&offset=" + offset + "&rating=PG-13&lang=en";
 
     offset = Math.floor(Math.random() * 100);
 
@@ -29,13 +29,14 @@ function displayGifs() {
         // Only taking action if the photo has an appropriate rating
         if (results[i].rating !== "r") {
           // Creating an image tag
-          var gifImage = $("<img class='gif-images m-3'>");
+          var gifImage = $("<img class='gif-images'>");
 
           gifImage.attr("src", results[i].images.original_still.url);
           gifImage.data("still", results[i].images.original_still.url);
           gifImage.data("animate", results[i].images.original.url);
           gifImage.data("state", "still");
-
+          gifImage.addClass("col-12 col-sm-6 col-md-4 col-lg-3 w-100 mb-3");
+          
           // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
           $("#gifs-appear-here").prepend(gifImage);
         }
@@ -47,19 +48,19 @@ function renderButtons() {
   // (this is necessary otherwise we will have repeat buttons)
   $("#gif-buttons").empty();
 
-  // Looping through the array of movies
+ 
   for (var i = 0; i < gifs.length; i++) {
-    // Then dynamicaly generating buttons for each movie in the array.
+    // Then dynamicaly generating buttons for each gif in the array.
     // This code $("<button>") is all jQuery needs to create the start and end tag. (<button></button>)
     var a = $("<button>");
     // Adding a class
-    a.addClass("btn my-2 btn-primary gif-button w-100");
-    // Adding a data-attribute with a value of the movie at index i
+    a.addClass("btn m-2 btn-primary gif-button w-75 col-12 col-sm-5 col-md-12");
+    // Adding a data-attribute with a value of the gif at index i
     a.attr("data-name", gifs[i]);
-    // Providing the button's text with a value of the movie at index i
+    // Providing the button's text with a value of the gif at index i
     a.text(gifs[i]);
     // Adding the button to the HTML
-    $("#gif-buttons").prepend(a);
+    $("#gif-buttons").append(a);
   }
 };
 
@@ -102,3 +103,4 @@ $(document).on("click", ".gif-images", function() {
     $(this).data("state", "still");
   }
 });
+
