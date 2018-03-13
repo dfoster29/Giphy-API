@@ -10,7 +10,7 @@ function displayGifs() {
   var queryURL =
     "https://api.giphy.com/v1/gifs/search?api_key=ChQcDZavsw8J53mE5HXu31YOwzqbpwvA&q=" +
     giphy +
-    "&limit=9&offset=" + offset + "&rating=PG-13&lang=en";
+    "&limit=8&offset=" + offset + "&rating=PG-13&lang=en";
 
     offset = Math.floor(Math.random() * 100);
 

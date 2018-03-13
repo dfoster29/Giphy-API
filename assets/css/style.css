@@ -12,9 +12,10 @@ body {
   background-color: black;
   color: white;
 }
+
 .gif-images {
   border-radius: 5px;
-  width: 29%;
+  width: 21%;
   display: inline block;
 }
 
@@ -45,3 +46,4 @@ body {
 #container-margin {
   margin-bottom: 100px;
 }
+
