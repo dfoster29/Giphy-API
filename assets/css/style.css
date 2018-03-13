@@ -1,11 +1,11 @@
 body {
-  background-image: url("../images/wood.jpg")
+  background-image: url("../images/space.jpg")
 }
 
 .card {
   background-color: rgb(27, 26, 26);
-  /* padding-bottom: 20px; */
   border-radius: 10px;
+
 }
 
 .card-header {
@@ -44,4 +44,3 @@ body {
 #container-margin {
   margin-bottom: 100px;
 }
-
