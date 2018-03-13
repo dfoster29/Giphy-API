@@ -17,27 +17,40 @@
     Let's Get Giphy
   </div>
 
-  <div class="container my-5">
-
-    <form class="text-center" id="gif-form">
-      <label for="search-input"></label>
-      <input class="btn-lg m-4 mt-5" placeholder="search..." type="text" id="gif-input">
-      
-
-      <input class="btn-lg btn-success mb-3" id="add-gif" type="submit" value="Gimme Gifs!">
-    </form>
-
-<div class="row">
-
-  <div class="col-md-2 col-3 text-center w-75" id="gif-buttons"></div>
-
-  <div class="col-md-10 col-9 my-3" id="gifs-appear-here"></div>
-
-</div>
+  <div class="container" id="container-margin">
+    <div class="row main-body">
+      <div class="col-md-2 col-12">
+        <div class="card mb-4">
+          <div class="card-header text-center">
+            <h2>buttons!</h2>
+          </div>
+          <div class="card-body">
+            <div class="card-text">
+              <div class="text-center w-100" id="gif-buttons"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
+      <div class="col-md-10 col-12">
+        <div class="card">
+          <div class="card-header">
+            <form class="text-center" id="gif-form">
+              <label for="search-input"></label>
+              <input class="btn-lg mt-3 mr-3" placeholder="search..." type="text" id="gif-input">
+              <input class="btn-lg btn-success mb-3" id="add-gif" type="submit" value="Gimme Gifs!">
+            </form>
+          </div>
+          <div class="card-body">
+            <div class="card-text text-center">
+              <div id="gifs-appear-here"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
 
   <div class="jumbotron-fluid bg-dark p-3 fixed-bottom text-center w-100">
     <h5>Copyright &copy; 2018 Daniel Foster</h5>

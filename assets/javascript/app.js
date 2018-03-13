@@ -29,7 +29,7 @@ function displayGifs() {
         // Only taking action if the photo has an appropriate rating
         if (results[i].rating !== "r") {
           // Creating an image tag
-          var gifImage = $("<img class='gif-images m-2'>");
+          var gifImage = $("<img class='gif-images m-3'>");
 
           gifImage.attr("src", results[i].images.original_still.url);
           gifImage.data("still", results[i].images.original_still.url);
@@ -53,7 +53,7 @@ function renderButtons() {
     // This code $("<button>") is all jQuery needs to create the start and end tag. (<button></button>)
     var a = $("<button>");
     // Adding a class
-    a.addClass("btn m-2 btn-primary gif-button w-75");
+    a.addClass("btn my-2 btn-primary gif-button w-100");
     // Adding a data-attribute with a value of the movie at index i
     a.attr("data-name", gifs[i]);
     // Providing the button's text with a value of the movie at index i
